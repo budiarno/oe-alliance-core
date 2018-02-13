@@ -11,7 +11,7 @@ DEPENDS = "tslib mpfr gmp"
 SRCREV = "${AUTOREV}"
 PV = "${IMAGE_VERSION}+gitr${SRCPV}"
 PKGV = "${IMAGE_VERSION}+gitr${GITPKGV}"
-PR = "r68"
+PR = "r70"
 
 SRC_URI="git://github.com/oe-alliance/3rdparty-plugins.git;protocol=git"
 
@@ -82,7 +82,7 @@ THIRDPARTY_PLUGINS = " \
     enigma2-plugin-extensions-sport1ticker_1.3_all.ipk \
     enigma2-plugin-extensions-sundtekcontrolcenter_20180210_all.ipk \
     enigma2-plugin-extensions-tectimetv_3.1_all.ipk \
-    enigma2-plugin-extensions-thetvdb_0.7-20120607-r2_mips32el.ipk \
+    enigma2-plugin-extensions-thetvdb_0.7-20120607-r3_mips32el.ipk \
     enigma2-plugin-extensions-tmbd_8.3_all.ipk \
     enigma2-plugin-extensions-tmdb_0.7-r2_all.ipk \
     enigma2-plugin-extensions-translator_1.1rc1_all.ipk \
@@ -95,7 +95,7 @@ THIRDPARTY_PLUGINS = " \
     enigma2-plugin-extensions-vhannibalautosettings_1.1_mips32el.ipk \
     enigma2-plugin-extensions-vuplusforum_0.8rc2_all.ipk \
     enigma2-plugin-extensions-webmedia_14.0_r0_all.ipk \
-    enigma2-plugin-extensions-webradiofs_16.23_all.ipk \
+    enigma2-plugin-extensions-webradiofs_16.24_all.ipk \
     enigma2-plugin-extensions-wikipedia_2.3rc2_all.ipk \
     enigma2-plugin-extensions-wwech_1.03_all.ipk \
     enigma2-plugin-extensions-xbmcwetter_1.4rc1_all.ipk \
