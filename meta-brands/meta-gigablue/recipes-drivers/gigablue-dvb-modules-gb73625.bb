@@ -1,9 +1,9 @@
-SRCDATE = "20170726"
+SRCDATE = "20180403"
 
 KV = "4.8.3"
 
-SRC_URI[md5sum] = "a241e3f96efd92bb41fbde989d5f1b74"
-SRC_URI[sha256sum] = "f0ad81b89741f7bed7b9da2f306d288059ac08b7759e3552f607a7e0fbcbc675"
+SRC_URI[md5sum] = "33305fd3bccdc66137252d3765a9bd39"
+SRC_URI[sha256sum] = "07b14ad80abed5c601dc76f036746769576461e628ba0c0184d7e38fc409a978"
 
 SRC_URI = "http://opensat.de/gigablue/drivers/gigablue-drivers-${KV}-BCM73625-${SRCDATE}.zip"
 

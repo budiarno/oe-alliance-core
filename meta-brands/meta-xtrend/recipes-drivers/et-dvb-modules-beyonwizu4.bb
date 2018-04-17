@@ -9,10 +9,10 @@ PR = "r0"
 
 KV = "4.9.51"
 GCCREV = "6.3.0"
-SRCDATE = "20180320"
+SRCDATE = "20180411"
 
-SRC_URI[md5sum] = "03919d3a0418a4333a67754339fd1b0e"
-SRC_URI[sha256sum] = "9134530372e85dd6a68d52f66544ffa7fdc5225c4c6fce4c7f9f26979ea175d6"
+SRC_URI[md5sum] = "8531611aed3c257bbff831ba343d7998"
+SRC_URI[sha256sum] = "796fcf70fae36c212773e7fd6d8f8b2de39b39d4ddac5544cc8a267b5ecd192b"
 
 SRC_URI = "http://source.mynonpublic.com/xtrend/${MACHINE_DRIVER}-drivers-${KV}-${GCCREV}-${SRCDATE}.zip"
 
