@@ -74,15 +74,22 @@ MTD_BLACK  = "mmcblk0"
 #ver for qtplugins -v3 = dinobot
 VER = "-v3"
 
+KERNEL_MODULE_AUTOLOAD += "xhci-plat-hcd"
+KERNEL_MODULE_AUTOLOAD += "ehci-platform"
+KERNEL_MODULE_AUTOLOAD += "ohci-platform"
+KERNEL_MODULE_AUTOLOAD += "cfg80211"
+
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
     dinobot-dvb-modules-${MACHINE} \
-    ${@bb.utils.contains('MACHINE', 'u5pvr', 'dinobot-loadmodules-${MACHINE}' , 'kernel-module-xhci-plat-hcd kernel-module-ehci-platform kernel-module-ohci-platform', d)} \
+    kernel-module-xhci-plat-hcd \
+    kernel-module-ehci-platform \
+    kernel-module-ohci-platform \
     dinobot-opengl-${MACHINE} \
     dinobot-libs-${MACHINE} \
     dinobot-hihalt-${MACHINE} \
 "
 
-MACHINE_FEATURES += "videoenhancement switchoff  hdmicec 7segment textlcd skins1080 blindscan-tbs emmc mmc \
+MACHINE_FEATURES += "videoenhancement switchoff  hdmicec 7segment textlcd skins1080 blindscan-tbs emmc mmc kodi alsa hbbtv-browser-webkit qtstalker\
     ${@bb.utils.contains('MACHINEBUILD', 'anadol4k', '' , ' dvb-c', d)} \
     "
 
@@ -96,6 +103,7 @@ DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
 PREFERRED_VERSION_linux-dinobot = "4.4.35"
 PREFERRED_VERSION_linux-libc-headers = "4.4"
 PREFERRED_PROVIDER_virtual/egl = "dinobot-opengl-${MACHINE}" 
+PREFERRED_PROVIDER_virtual/libgles1 = "dinobot-opengl-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgles2 = "dinobot-opengl-${MACHINE}"
 PREFERRED_PROVIDER_virtual/kodi = "stb-kodi-${MACHINE}"
 
@@ -113,10 +121,6 @@ include conf/machine/include/autoload-filesystems.inc
 require conf/machine/include/soc-family.inc
 
 DVBMEDIASINK_CONFIG = "--with-h265 --with-vb8 --with-vb9 --with-spark --with-opus --with-wma --with-wmv --with-pcm --with-dts --with-eac3"
-
-PREFERRED_PROVIDER_virtual/libgles1 = "dinobot-opengl-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles2 = "dinobot-opengl-${MACHINE}"
-PREFERRED_PROVIDER_virtual/egl = "dinobot-opengl-${MACHINE}"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-dinobot"
 PREFERRED_RPROVIDER_showiframe = "dinobot-showiframe-${MACHINE}"

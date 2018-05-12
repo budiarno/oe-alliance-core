@@ -27,9 +27,9 @@ OPTIONAL_WIFIDRIVERS = "${@bb.utils.contains("MACHINE_FEATURES", "wifiusblegacy"
 
 DEPENDS = "enigma2 enigma2-plugins enigma2-oe-alliance-plugins network-usb-drivers-meta"
 
-DEPENDS_remove_wetekplay = "network-usb-drivers-meta"
-DEPENDS_remove_wetekplay2 = "network-usb-drivers-meta"
-DEPENDS_remove_odroidc2 = "network-usb-drivers-meta"
+DEPENDS_remove_AML8726 = "network-usb-drivers-meta"
+DEPENDS_remove_AMLS905 = "network-usb-drivers-meta"
+DEPENDS_remove_AML905D = "network-usb-drivers-meta"
 
 RDEPENDS_${PN} = "\
     enigma2-plugin-systemplugins-wirelesslan \
@@ -55,8 +55,7 @@ RDEPENDS_${PN} = "\
     ${@bb.utils.contains("MACHINE", "osninoplus", "enigma2-plugin-drivers-network-usb-rt8723bs", "", d)} \
     ${@bb.utils.contains("MACHINEBUILD", "spycat4k", "enigma2-plugin-drivers-network-usb-qca9377", "", d)} \
     ${@bb.utils.contains("MACHINEBUILD", "spycat4kcombo", "enigma2-plugin-drivers-network-usb-qca9377", "", d)} \
-    ${@bb.utils.contains("MACHINE", "u5", "enigma2-plugin-drivers-network-usb-rtl8192eu", "", d)} \
-    ${@bb.utils.contains("MACHINE", "u52", "enigma2-plugin-drivers-network-usb-rtl8192eu", "", d)} \
+    ${@bb.utils.contains("BRAND_OEM", "dinobot", "enigma2-plugin-drivers-network-usb-rtl8192eu enigma2-plugin-drivers-network-usb-rtl8822bu", "", d)} \
     "
 
 RDEPENDS_${PN}_remove_odroidc2 = "enigma2-plugin-drivers-network-usb-rtl8192cu"

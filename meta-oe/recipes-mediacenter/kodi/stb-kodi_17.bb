@@ -74,9 +74,13 @@ DEPENDS = " \
             gstreamer1.0-plugins-base \
           "
 
+DEPENDS_append_AML8726 = " libamadec libamcodec libamavutils"
+DEPENDS_append_AMLS905 = " libamadec libamcodec libamavutils"
+DEPENDS_append_AML905D = " libamadec libamcodec libamavutils"
+
 PROVIDES = "xbmc"
 
-SRCREV = "a9a7a20071bfd759e72e7053cee92e6f5cfb5e48"
+SRCREV = "7e52c1d94d0cbc3f8ace57b1fc74ae1582c5a869"
 
 PV = "17.6+git${SRCPV}"
 PKGV = "17.6+git${GITPKGV}"
@@ -94,10 +98,19 @@ SRC_URI = "git://github.com/xbmc/xbmc.git;branch=Krypton \
            file://stb-settings.patch \
            file://e2player.patch \
            file://add-gstplayer-support.patch \
+           file://visualization.patch \
+           file://visualizations.zip \
 "
 
 SRC_URI_append_u5 = " file://eglwrapper.patch"
+SRC_URI_append_u51 = " file://eglwrapper.patch"
+SRC_URI_append_u52 = " file://eglwrapper.patch"
+SRC_URI_append_u53 = " file://eglwrapper.patch"
 SRC_URI_append_u5pvr = " file://eglwrapper.patch"
+
+SRC_URI_append_AML8726 = " file://amlogic-codec-krypton-fixes.patch"
+SRC_URI_append_AMLS905 = " file://amlogic-codec-krypton-fixes.patch"
+SRC_URI_append_AML905D = " file://amlogic-codec-krypton-fixes.patch"
 
 SRC_URI_append_libc-musl = " \
            file://0001-Fix-file_Emu-on-musl.patch \
@@ -161,6 +174,10 @@ def enable_glew(bb, d):
     return ""
 
 do_configure() {
+    cp -a ${WORKDIR}/visualization.glspectrum ${WORKDIR}/git/addons/
+    cp -a ${WORKDIR}/visualization.waveform ${WORKDIR}/git/addons/
+    cp -a ${WORKDIR}/visualizations ${WORKDIR}/git/xbmc/
+    cp -a ${WORKDIR}/include ${WORKDIR}/git/xbmc/addons/
     ( for i in $(find ${S} -name "configure.*" ) ; do
        cd $(dirname $i) && gnu-configize --force || true
     done )
@@ -212,6 +229,44 @@ RRECOMMENDS_${PN}_append = " \
    lsb \
    os-release \
    ${@bb.utils.contains('PACKAGECONFIG', 'x11', 'xrandr xdpyinfo', '', d)} \
+   \
+    python-distutils \
+    python-subprocess \
+    python-robotparser \
+    python-mechanize \
+    python-threading \
+    python-xml \
+    python-netserver \
+    python-misc \
+    python-pygobject \
+    python-pygobject-lib \
+    python-textutils \
+    python-simplejson \
+    python-xmlrpc   \
+    python-pprint \
+    python-email \
+    python-compile \
+    python-compiler \
+    python-numbers \
+    python-pkgutil \
+    python-pycurl \
+    python-async \
+    python-docutils \
+    python-iniparse \
+    python-hotshot \
+    python-importlib \
+    python-curses \
+    python-pycrypto \
+    python-db \
+    python-argparse \
+    python-doctest \
+    python-plistlib\
+    python-mailbox \
+    python-terminal \
+    python-smtpd \
+    python-pydoc \
+    python-syslog \
+    python-resource \
 "
 RRECOMMENDS_${PN}_append_libc-glibc = " \
     glibc-charmap-ibm850 \
