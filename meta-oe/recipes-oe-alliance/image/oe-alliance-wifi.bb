@@ -27,10 +27,6 @@ OPTIONAL_WIFIDRIVERS = "${@bb.utils.contains("MACHINE_FEATURES", "wifiusblegacy"
 
 DEPENDS = "enigma2 enigma2-plugins enigma2-oe-alliance-plugins network-usb-drivers-meta"
 
-DEPENDS_remove_AML8726 = "network-usb-drivers-meta"
-DEPENDS_remove_AMLS905 = "network-usb-drivers-meta"
-DEPENDS_remove_AML905D = "network-usb-drivers-meta"
-
 RDEPENDS_${PN} = "\
     enigma2-plugin-systemplugins-wirelesslan \
     ${@bb.utils.contains("MACHINE", "vuduo2", "enigma2-plugin-drivers-network-usb-rt3070", "", d)} \
@@ -50,12 +46,16 @@ RDEPENDS_${PN} = "\
     ${@bb.utils.contains("DISTRO_NAME", "opendroid", "enigma2-plugin-drivers-network-usb-rtl8192cu-rev2", "", d)} \
     ${@bb.utils.contains("DISTRO_NAME", "openhdf", "enigma2-plugin-drivers-network-usb-rtl8192cu-rev2", "", d)} \
     ${@bb.utils.contains("MACHINEBUILD", "bre2ze", "enigma2-plugin-drivers-network-usb-mt7601u", "", d)} \
+    ${@bb.utils.contains("MACHINE", "9900lx", "enigma2-plugin-drivers-network-usb-mt7601u", "", d)} \
+    ${@bb.utils.contains("MACHINE", "8100s", "enigma2-plugin-drivers-network-usb-mt7601u", "", d)} \
     ${@bb.utils.contains("BRAND_OEM", "xcore", "enigma2-plugin-drivers-network-usb-rt8723bs", "", d)} \
     ${@bb.utils.contains("MACHINE", "osnino", "enigma2-plugin-drivers-network-usb-rt8723bs", "", d)} \
     ${@bb.utils.contains("MACHINE", "osninoplus", "enigma2-plugin-drivers-network-usb-rt8723bs", "", d)} \
     ${@bb.utils.contains("MACHINEBUILD", "spycat4k", "enigma2-plugin-drivers-network-usb-qca9377", "", d)} \
     ${@bb.utils.contains("MACHINEBUILD", "spycat4kcombo", "enigma2-plugin-drivers-network-usb-qca9377", "", d)} \
     ${@bb.utils.contains("BRAND_OEM", "dinobot", "enigma2-plugin-drivers-network-usb-rtl8192eu enigma2-plugin-drivers-network-usb-rtl8822bu", "", d)} \
+    ${@bb.utils.contains("MACHINE", "alien5", "rtl8189es", "", d)} \
+    ${@bb.utils.contains("MACHINE", "cc1", "enigma2-plugin-drivers-network-usb-rtl8192eu", "", d)} \
     "
 
 RDEPENDS_${PN}_remove_odroidc2 = "enigma2-plugin-drivers-network-usb-rtl8192cu"

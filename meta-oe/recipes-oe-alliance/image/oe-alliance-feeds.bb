@@ -9,7 +9,7 @@ ALLOW_EMPTY_${PN} = "1"
 PACKAGES = "${PN}"
 
 PV = "${IMAGE_VERSION}"
-PR = "r32"
+PR = "r33"
 
 DEPENDS = "enigma2-plugin-drivers-usbserial enigma2-plugin-systemplugins-hrtunerproxy"
 RECOMMENDS = "enigma2-plugin-extensions-et-livestream"
@@ -30,7 +30,6 @@ RDEPENDS_${PN} = " \
     enigma2-plugin-extensions-tuxcom \
     enigma2-plugin-security-firewall \
     enigma2-plugin-extensions-enigmalight \
-    ${@bb.utils.contains("DISTRO_FEATURES", "directfb", "enigma2-plugin-extensions-openairplay", "", d)} \
     enigma2-plugin-extensions-mediatomb \
     enigma2-plugin-extensions-dreamplex \
     enigma2-plugin-extensions-et-portal \
@@ -156,10 +155,6 @@ GST_BASE_DVD = "${@bb.utils.contains('GST_VERSION', '1.0', ' \
     gst-plugins-bad-videoparsersbad \
     gst-plugins-bad-mpegtsmux \
     ', d)}"
-
-RDEPENDS_${PN}_remove_wetekplay = "network-usb-drivers-meta"
-RDEPENDS_${PN}_remove_wetekplay2 = "network-usb-drivers-meta"
-RDEPENDS_${PN}_remove_odroidc2 = "network-usb-drivers-meta"
 
 RRECOMMENDS_${PN}_append_vuuno = "enigma2-plugin-extensions-hbbtv"
 RRECOMMENDS_${PN}_append_vuultimo = "enigma2-plugin-extensions-hbbtv"
