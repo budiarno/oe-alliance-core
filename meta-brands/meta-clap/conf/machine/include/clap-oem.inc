@@ -25,7 +25,7 @@ ${@bb.utils.contains('MACHINEBUILD', 'clap4k', 'mmcblk0p13' , '', d)}\
 
 KERNEL_FILE = "kernel.bin"
 ROOTFS_FILE = "rootfs.tar.bz2"
-MTD_BLACK  = "mmcblk0"
+MTD_BLACK  = "sda"
 
 #ver for qtplugins -clap = clap
 VER = "-clap"
@@ -39,13 +39,15 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
     clap-reader-${MACHINE} \
     clap-libreader-${MACHINE} \
     clap-partitions-${MACHINE} \
+    e2fsprogs-resize2fs \
+    gptfdisk \
 "
 
 MACHINE_FEATURES += "videoenhancement switchoff 7segment textlcd skins1080 emmc mmc blindscan-dvbs kodi alsa hbbtv-browser-webkit qtstalker"
 
 IMAGE_CLASSES  += "clap-emmc_image"
 IMAGE_FSTYPES += "clapemmc"
-IMAGE_ROOTFS_SIZE ?= "1048576"
+IMAGE_ROOTFS_SIZE ?= "524288"
 
 TARGET_ARCH = "arm"
 DEFAULTTUNE = "cortexa15hf-neon-vfpv4"
