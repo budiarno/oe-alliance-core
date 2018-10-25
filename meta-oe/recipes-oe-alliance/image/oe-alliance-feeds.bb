@@ -9,7 +9,7 @@ ALLOW_EMPTY_${PN} = "1"
 PACKAGES = "${PN}"
 
 PV = "${IMAGE_VERSION}"
-PR = "r3"
+PR = "r4"
 
 DEPENDS = "enigma2-plugin-drivers-usbserial enigma2-plugin-systemplugins-hrtunerproxy"
 RECOMMENDS = "enigma2-plugin-extensions-et-livestream"
@@ -40,6 +40,7 @@ RDEPENDS_${PN} = " \
     enigma2-plugin-extensions-autobouquets \
     enigma2-plugin-extensions-e2iplayer \
     enigma2-plugin-extensions-e2iplayer-deps \
+    enigma2-plugin-extensions-e2m3u2bouquet \
     enigma2-plugin-systemplugins-hrtunerproxy \
     oe-alliance-branding-remote \
     ${@bb.utils.contains("GST_VERSION", "1.0", "eplayer5", "eplayer4", d)} \
@@ -56,6 +57,7 @@ RDEPENDS_${PN} = " \
     ${@bb.utils.contains("MACHINE_FEATURES", "gb-qthbbtv", "enigma2-plugin-extensions-hbbtv-gb", "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "chromiumos", "enigma2-plugin-extensions-chromium", "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "vuglesdemo", "enigma2-plugin-extensions-libvupldemo", "", d)} \
+    ${@bb.utils.contains("MACHINE_FEATURES", "vustalker", "enigma2-plugin-extensions-stalkerclient-${MACHINE}", "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "dvd", "bdremux replex mjpegtools dvdauthor dvd+rw-tools cdrkit cdfs cdtextinfo enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdburn enigma2-plugin-extensions-dvdplayer ${GST_BASE_DVD}", "", d)} \
     autofs \
     autossh \

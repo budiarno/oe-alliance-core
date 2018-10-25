@@ -4,7 +4,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
-SRCDATE = "20180905"
+SRCDATE = "20181015"
 PR = "${SRCDATE}"
 
 DEPENDS = "linkdroid-libamavutils-${MACHINE} alsa-lib rtmpdump "
@@ -13,8 +13,8 @@ RDEPENDS_${PN} = "ffmpeg linkdroid-libamavutils-${MACHINE}"
 
 inherit lib_package
 
-SRC_URI[md5sum] = "cdfbaaf67bfa803526219f3b492012bf"
-SRC_URI[sha256sum] = "ab41d06abaeff8d2489a57e7e83022955aeddd5ade7bb448c0fcd79e3a38fabb"
+SRC_URI[md5sum] = "8ea5a7f870c67170b120e2d5c7e485da"
+SRC_URI[sha256sum] = "76120ee5c9ec5b71b1bc5dd3335402586fcb34d9b4ad89acdbb10c4228b4e5a3"
 
 SRC_URI = "http://source.mynonpublic.com/linkdroid/${BPN}-${SRCDATE}.zip"
 
