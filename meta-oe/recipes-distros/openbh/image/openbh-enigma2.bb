@@ -32,6 +32,8 @@ RRECOMMENDS_${PN} = " \
     enigma2-plugin-extensions-mediaplayer \
     enigma2-plugin-systemplugins-crossepg \
     enigma2-plugin-systemplugins-hotplug \
+    enigma2-plugin-extensions-youtube \
+    ${@bb.utils.contains("MACHINE_FEATURES", "kodi", "enigma2-plugin-extensions-kodi" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "videoenhancement", "", "enigma2-plugin-systemplugins-videoenhancement", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "uianimation", "enigma2-plugin-systemplugins-animationsetup" , "", d)} \
     ${@bb.utils.contains("MACHINE_FEATURES", "omb", "enigma2-plugin-extensions-openmultiboot", "", d)} \
