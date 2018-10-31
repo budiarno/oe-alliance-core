@@ -31,7 +31,8 @@ SRCREV = "${AUTOREV}"
 PV = "1.3.0+git${SRCPV}"
 PKGV = "1.3.0+git${GITPKGV}"
 
-SRC_URI = "git://github.com/E2OpenPlugins/e2openplugin-${MODULE}.git;protocol=git;branch=${BRANCH} \
+#SRC_URI = "git://github.com/E2OpenPlugins/e2openplugin-${MODULE}.git;protocol=git;branch=${BRANCH}
+SRC_URI = "git://github.com/budiarno/e2openplugin-OpenWebif.git;protocol=git;branch=${BRANCH} \
            file://transcoding.py"
 
 S="${WORKDIR}/git"
