@@ -1,7 +1,7 @@
-KV = "4.19.0"
-SRCDATE = "20181112"
+KV = "4.19.4"
+SRCDATE = "20181126"
 KOFILES = "brcmstb-${MACHINE} ci si2183 avl6862 avl6261"
 
 require edision-dvb-modules.inc
-SRC_URI[md5sum] = "9c02abc507e12c32738ba94895a508d5"
-SRC_URI[sha256sum] = "a06a566828d7d36ef540c6621a62c18f8ae7eb1b740d3a57f7d6fb70330eceb2"
+SRC_URI[md5sum] = "55e81c3cf26b4f79abe43b211d237a82"
+SRC_URI[sha256sum] = "4069e02d73ed20cd762f22cab11d39245218a4dc4ff62e5415de801f19e68d0d"
